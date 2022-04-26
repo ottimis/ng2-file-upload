@@ -5,6 +5,7 @@
 ### Install
 
 Install the components
+
 ```
 npm install ng2-file-upload --save
 ```

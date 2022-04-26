@@ -1,13 +1,20 @@
-import { Directive, EventEmitter, ElementRef, HostListener, Input, Output } from '@angular/core';
+import {
+  Directive,
+  EventEmitter,
+  ElementRef,
+  HostListener,
+  Input,
+  Output,
+} from "@angular/core";
 
-import { FileUploader, FileUploaderOptions } from './file-uploader.class';
+import { FileUploader, FileUploaderOptions } from "./file-uploader.class";
 
-@Directive({ selector: '[ng2FileDrop]' })
+@Directive({ selector: "[ng2FileDrop]" })
 export class FileDropDirective {
-  @Input()  uploader?: FileUploader;
-  @Output()  fileOver: EventEmitter<any> = new EventEmitter();
+  @Input() uploader?: FileUploader;
+  @Output() fileOver: EventEmitter<any> = new EventEmitter();
   // eslint-disable-next-line @angular-eslint/no-output-on-prefix
-  @Output()  onFileDrop: EventEmitter<File[]> = new EventEmitter<File[]>();
+  @Output() onFileDrop: EventEmitter<File[]> = new EventEmitter<File[]>();
 
   protected element: ElementRef;
 
@@ -20,10 +27,10 @@ export class FileDropDirective {
   }
 
   getFilters(): string {
-    return '';
+    return "";
   }
 
-  @HostListener('drop', [ '$event' ])
+  @HostListener("drop", ["$event"])
   onDrop(event: MouseEvent): void {
     const transfer = this._getTransfer(event);
     if (!transfer) {
@@ -40,22 +47,22 @@ export class FileDropDirective {
     this.onFileDrop.emit(transfer.files);
   }
 
-  @HostListener('dragover', [ '$event' ])
+  @HostListener("dragover", ["$event"])
   onDragOver(event: MouseEvent): void {
     const transfer = this._getTransfer(event);
     if (!this._haveFiles(transfer.types)) {
       return;
     }
 
-    transfer.dropEffect = 'copy';
+    transfer.dropEffect = "copy";
     this._preventAndStop(event);
     this.fileOver.emit(true);
   }
 
-  @HostListener('dragleave', [ '$event' ])
+  @HostListener("dragleave", ["$event"])
   onDragLeave(event: MouseEvent): void {
     if ((this as any).element) {
-      if (event.currentTarget === (this as any).element[ 0 ]) {
+      if (event.currentTarget === (this as any).element[0]) {
         return;
       }
     }
@@ -65,7 +72,9 @@ export class FileDropDirective {
   }
 
   protected _getTransfer(event: any): any {
-    return event.dataTransfer ? event.dataTransfer : event.originalEvent.dataTransfer; // jQuery fix;
+    return event.dataTransfer
+      ? event.dataTransfer
+      : event.originalEvent.dataTransfer; // jQuery fix;
   }
 
   protected _preventAndStop(event: MouseEvent): void {
@@ -79,9 +88,9 @@ export class FileDropDirective {
     }
 
     if (types.indexOf) {
-      return types.indexOf('Files') !== -1;
+      return types.indexOf("Files") !== -1;
     } else if (types.contains) {
-      return types.contains('Files');
+      return types.contains("Files");
     } else {
       return false;
     }

@@ -1,5 +1,3 @@
 module.exports = {
-projects: [
-  '<rootDir>/libs/ng2-file-upload'
-]
+  projects: ["<rootDir>/libs/ng2-file-upload"],
 };

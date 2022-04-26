@@ -1,8 +1,15 @@
-import { Directive, EventEmitter, ElementRef, Input, HostListener, Output } from '@angular/core';
+import {
+  Directive,
+  EventEmitter,
+  ElementRef,
+  Input,
+  HostListener,
+  Output,
+} from "@angular/core";
 
-import { FileUploader, FileUploaderOptions } from './file-uploader.class';
+import { FileUploader, FileUploaderOptions } from "./file-uploader.class";
 
-@Directive({ selector: '[ng2FileSelect]' })
+@Directive({ selector: "[ng2FileSelect]" })
 export class FileSelectDirective {
   @Input() uploader?: FileUploader;
   // eslint-disable-next-line @angular-eslint/no-output-on-prefix
@@ -19,14 +26,14 @@ export class FileSelectDirective {
   }
 
   getFilters(): string {
-    return '';
+    return "";
   }
 
   isEmptyAfterSelection(): boolean {
     return !!this.element.nativeElement.attributes.multiple;
   }
 
-  @HostListener('change')
+  @HostListener("change")
   onChange(): void {
     const files = this.element.nativeElement.files;
     const options = this.getOptions();
@@ -35,7 +42,7 @@ export class FileSelectDirective {
 
     this.onFileSelected.emit(files);
     if (this.isEmptyAfterSelection()) {
-      this.element.nativeElement.value = '';
+      this.element.nativeElement.value = "";
     }
   }
 }

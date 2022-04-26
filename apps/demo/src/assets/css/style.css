@@ -5,12 +5,18 @@
  * details, see http://creativecommons.org/licenses/by/3.0/.
  */
 
-.h1, .h2, .h3, h1, h2, h3 {
+.h1,
+.h2,
+.h3,
+h1,
+h2,
+h3 {
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
-.h1, h1 {
+.h1,
+h1 {
   font-size: 36px;
 }
 
@@ -18,12 +24,14 @@ td {
   vertical-align: middle;
 }
 
-a, .nav-tabs a.nav-link  {
+a,
+.nav-tabs a.nav-link {
   text-decoration: none;
   color: #6f5499;
 }
 
-.btn-group-lg > .btn, .btn-lg {
+.btn-group-lg > .btn,
+.btn-lg {
   font-size: 18px;
 }
 
@@ -59,19 +67,27 @@ section {
   line-height: 20px;
 }
 
-.navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+.navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
   color: #333;
   background-color: transparent;
 }
 
-.bd-pageheader, .bs-docs-masthead {
+.bd-pageheader,
+.bs-docs-masthead {
   position: relative;
   padding: 30px 0;
   color: #cdbfe3;
   text-align: center;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
   background-color: #6f5499;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#563d7c), to(#6f5499));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#563d7c),
+    to(#6f5499)
+  );
   background-image: -webkit-linear-gradient(top, #563d7c 0, #6f5499 100%);
   background-image: -o-linear-gradient(top, #563d7c 0, #6f5499 100%);
   background-image: linear-gradient(to bottom, #563d7c 0, #6f5499 100%);
@@ -100,11 +116,12 @@ section {
 }
 
 .card {
-  border-radius: 0 0 .25rem .25rem;
+  border-radius: 0 0 0.25rem 0.25rem;
 }
 
 @media (min-width: 992px) {
-  .bd-pageheader h1, .bd-pageheader p {
+  .bd-pageheader h1,
+  .bd-pageheader p {
     margin-right: 380px;
   }
 }
@@ -128,7 +145,8 @@ section {
     font-size: 14px;
   }
 
-  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+  .navbar > .container .navbar-brand,
+  .navbar > .container-fluid .navbar-brand {
     margin-left: -15px;
   }
 }
@@ -170,12 +188,12 @@ section {
   table tr {
     border-bottom: 3px solid #ddd;
     display: block;
-    margin-bottom: .625em;
+    margin-bottom: 0.625em;
   }
 
   table td {
     border-bottom: 1px solid #ddd;
-    font-size: .8em;
+    font-size: 0.8em;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -197,7 +215,8 @@ section {
 }
 
 @media (max-width: 400px) {
-  code, kbd {
+  code,
+  kbd {
     font-size: 60%;
   }
 }
@@ -241,11 +260,11 @@ section {
 }
 
 pre {
-  white-space: pre-wrap;       /* CSS 3 */
-  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-  white-space: -pre-wrap;      /* Opera 4-6 */
-  white-space: -o-pre-wrap;    /* Opera 7 */
-  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  white-space: pre-wrap; /* CSS 3 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
   line-height: 1.42857143;
   color: #333;
   background-color: #f5f5f5;
@@ -257,5 +276,3 @@ pre {
 pre.prettyprint {
   margin-bottom: 0;
 }
-
-

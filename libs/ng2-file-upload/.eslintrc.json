@@ -9,8 +9,7 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "parserOptions": { "project": ["src/accordion/tsconfig.*?.json"] },
-      "rules": {
-      }
+      "rules": {}
     },
     {
       "files": ["*.html"],
